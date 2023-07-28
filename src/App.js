@@ -1,14 +1,18 @@
-
-import './App.css';
+import { Routes, Route } from "react-router-dom"
 import 'bootstrap/dist/css/bootstrap.css';
-import Register from './register/Register';
+import Post from "./route/post"
+import PostComment from "./route/comment";
+
 
 function App() {
   return (
     <div className="App">
-      <Register/>
+      <Routes>
+        <Route path="/" element={ <Post/> } />
+        <Route path="/post/:id" element={ <PostComment/> } />
+      </Routes>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
